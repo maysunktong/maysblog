@@ -1,0 +1,29 @@
+{
+  "cacheItemsMap": {
+    "books/book-1.mdx": {
+      "document": {
+        "title": "Two Forms of Pre-rendering",
+        "date": "2020-01-01",
+        "description": "Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.",
+        "image": "https://res.cloudinary.com/maysunktong/image/upload/v1672221519/gingin/pexels-ella-olsson-1640772_x4xq6y.jpg",
+        "body": {
+          "raw": "\n# Two Forms of Pre-rendering\n\nNext.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.\n\nImportantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a \"hybrid\" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.\n",
+          "code": "var Component=(()=>{var h=Object.create;var s=Object.defineProperty;var p=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var l=Object.getPrototypeOf,m=Object.prototype.hasOwnProperty;var u=(n,e)=>()=>(e||n((e={exports:{}}).exports,e),e.exports),x=(n,e)=>{for(var t in e)s(n,t,{get:e[t],enumerable:!0})},a=(n,e,t,i)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let o of f(e))!m.call(n,o)&&o!==t&&s(n,o,{get:()=>e[o],enumerable:!(i=p(e,o))||i.enumerable});return n};var j=(n,e,t)=>(t=n!=null?h(l(n)):{},a(e||!n||!n.__esModule?s(t,\"default\",{value:n,enumerable:!0}):t,n)),w=n=>a(s({},\"__esModule\",{value:!0}),n);var g=u((b,c)=>{c.exports=_jsx_runtime});var T={};x(T,{default:()=>S,frontmatter:()=>y});var r=j(g()),y={title:\"Two Forms of Pre-rendering\",date:\"2020-01-01\",slug:[\"tech\",\"animal\"],image:\"https://res.cloudinary.com/maysunktong/image/upload/v1672221519/gingin/pexels-ella-olsson-1640772_x4xq6y.jpg\",description:\"Next.js has two forms of pre-rendering: Static Generation and Server-side Rendering. The difference is in when it generates the HTML for a page.\"};function d(n){let e=Object.assign({h1:\"h1\",p:\"p\",strong:\"strong\"},n.components);return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(e.h1,{children:\"Two Forms of Pre-rendering\"}),`\n`,(0,r.jsxs)(e.p,{children:[\"Next.js has two forms of pre-rendering: \",(0,r.jsx)(e.strong,{children:\"Static Generation\"}),\" and \",(0,r.jsx)(e.strong,{children:\"Server-side Rendering\"}),\". The difference is in \",(0,r.jsx)(e.strong,{children:\"when\"}),\" it generates the HTML for a page.\"]}),`\n`,(0,r.jsxs)(e.p,{children:[\"Importantly, Next.js lets you \",(0,r.jsx)(e.strong,{children:\"choose\"}),' which pre-rendering form to use for each page. You can create a \"hybrid\" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.']})]})}function _(n={}){let{wrapper:e}=n.components||{};return e?(0,r.jsx)(e,Object.assign({},n,{children:(0,r.jsx)(d,n)})):d(n)}var S=_;return w(T);})();\n;return Component;"
+        },
+        "_id": "books/book-1.mdx",
+        "_raw": {
+          "sourceFilePath": "books/book-1.mdx",
+          "sourceFileName": "book-1.mdx",
+          "sourceFileDir": "books",
+          "contentType": "mdx",
+          "flattenedPath": "books/book-1"
+        },
+        "type": "Book",
+        "slug": "book-1"
+      },
+      "documentHash": "1673596410552",
+      "hasWarnings": true,
+      "documentTypeName": "Book"
+    }
+  }
+}

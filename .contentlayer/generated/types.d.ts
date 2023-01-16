@@ -18,13 +18,22 @@ export type Book = {
   description?: string | undefined
   tags?: string | undefined
   image?: string | undefined
+  author: Author
   /** MDX file body */
   body: MDX
   slug: string
 }  
 
 /** Nested types */
-  
+export type Author = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  _raw: Local.RawDocumentData
+  type: 'Author'
+  name: string
+  image: string
+
+}  
 
 /** Helper types */
 
@@ -34,8 +43,8 @@ export type AllTypeNames = DocumentTypeNames | NestedTypeNames
 export type DocumentTypes = Book
 export type DocumentTypeNames = 'Book'
 
-export type NestedTypes = never
-export type NestedTypeNames = never
+export type NestedTypes = Author
+export type NestedTypeNames = 'Author'
 
 
 export interface ContentlayerGenTypes {
@@ -57,7 +66,7 @@ export type DocumentTypeMap = {
 }
 
 export type NestedTypeMap = {
-
+  Author: Author
 }
 
  

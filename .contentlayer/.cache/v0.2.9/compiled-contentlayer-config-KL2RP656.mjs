@@ -1,18 +1,17 @@
+// contentlayer.config.ts
 import {
   defineDocumentType,
   makeSource,
-  defineNestedType,
+  defineNestedType
 } from "contentlayer/source-files";
-
-const Author = defineNestedType(() => ({
+var Author = defineNestedType(() => ({
   name: "Author",
   fields: {
     name: { type: "string", required: true },
-    image: { type: "string", required: true },
-  },
+    image: { type: "string", required: true }
+  }
 }));
-
-const Book = defineDocumentType(() => ({
+var Book = defineDocumentType(() => ({
   name: "Book",
   filePathPattern: `**/*.mdx`,
   contentType: "mdx",
@@ -25,18 +24,21 @@ const Book = defineDocumentType(() => ({
     author: {
       type: "nested",
       of: Author,
-      required: true,
-    },
+      required: false
+    }
   },
   computedFields: {
     slug: {
       type: "string",
-      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, ""),
-    },
-  },
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx/, "")
+    }
+  }
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "content",
-  documentTypes: [Book],
+  documentTypes: [Book]
 });
+export {
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-KL2RP656.mjs.map

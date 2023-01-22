@@ -5,7 +5,6 @@ specifiers:
   '@mdx-js/mdx': ^2.2.1
   '@mdx-js/react': ^2.2.1
   '@next/font': 13.1.1
-  '@rive-app/react-canvas': ^3.0.34
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
@@ -34,7 +33,6 @@ dependencies:
   '@mdx-js/mdx': 2.2.1
   '@mdx-js/react': 2.2.1_react@18.2.0
   '@next/font': 13.1.1
-  '@rive-app/react-canvas': 3.0.34_react@18.2.0
   '@types/node': 18.11.18
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.10
@@ -834,19 +832,6 @@ packages:
 
   /@protobufjs/utf8/1.1.0:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
-    dev: false
-
-  /@rive-app/canvas/1.0.97:
-    resolution: {integrity: sha512-NpA/z8FW/ktIghJSeZB/ySgG3H+TMhzFC5tnotKuFnxbzhH4qyKk+6FHM7BIjBKhBQ10vHnf45kUrLTRArfQhA==}
-    dev: false
-
-  /@rive-app/react-canvas/3.0.34_react@18.2.0:
-    resolution: {integrity: sha512-UJFmPXKKnx7wUsNN5FADMVqqlV8/iTj8KJ2vs9/tUYLO7UYSpvTGswNEnPELUgDXJl7VWiO9MyikhWk450/4MA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@rive-app/canvas': 1.0.97
-      react: 18.2.0
     dev: false
 
   /@rushstack/eslint-patch/1.2.0:

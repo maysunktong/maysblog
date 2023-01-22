@@ -12,7 +12,7 @@ export const Post = (props: PostProps) => {
     <div
       className={clsx(
         className,
-        "post-bg opacity-90 rounded-xl shadow-lg p-8 my-8 shadow-slate-300"
+        "opacity-90 rounded-2xl shadow-lg p-6 shadow-slate-300"
       )}
     >
       {children}

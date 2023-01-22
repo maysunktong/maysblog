@@ -6,7 +6,17 @@ body {
   background-color: #edf6f9;
 }
 
-.post-bg {
+.bg-post {
   background: #d9a7c7;
   background: linear-gradient(to right, #fffcdc, #d9a7c7);
+}
+
+.progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  transform-origin: 0%;
 }

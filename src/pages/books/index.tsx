@@ -5,23 +5,19 @@ import Link from "next/link";
 import { Post } from "../../components/Card/Post";
 import { BsDot } from "react-icons/bs";
 import { RoughNotation } from "react-rough-notation";
-import { useRive } from "@rive-app/react-canvas";
+import { BsArrowRight } from "react-icons/bs";
+import clsx from "clsx";
 
-export default function Books(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
-  const { books } = props;
-  const { RiveComponent, rive } = useRive({
-    src: "https://cdn.rive.app/animations/vehicles.riv",
-    autoplay: false,
-  });
+type BooksProps = {
+  className?: string;
+} & InferGetStaticPropsType<typeof getStaticProps>
+
+
+export default function Books(props: BooksProps) {
+  const { books, className } = props;
 
   return (
-    <>
-      <RiveComponent
-        onMouseEnter={() => rive && rive.play()}
-        onMouseLeave={() => rive && rive.pause()}
-      />
+    <div>
       <h3>
         <RoughNotation type="highlight" show={true} color="#ffc8dd">
           Hello RoughNotation
@@ -41,37 +37,58 @@ export default function Books(
         ex quasi. Illo doloribus in quasi. Adipisci?
       </h3>
 
-      <>
-        {books.map(({ title, slug, date, description, tags, author }) => (
-          <Post key={slug}>
-            <Link href={`/books/${slug}`} className="group">
-              <p className="text-xl group-hover:text-pink-500 group-hover:font-bold">
-                {title}
-              </p>
-
-              <div className="flex items-center">
-                <time dateTime={date} className="block  text-slate-600">
-                  {format(parseISO(date), "LLLL d  yyyy")}
-                </time>
-                <BsDot />
-                <div className="flex justify-start items-center gap-x-2">
-                  <p>{author.name}</p>
+      <div className="py-8 space-y-6">
+        {books.map(
+          ({ title, slug, date, description, tags, author, image }) => (
+            <Post
+              key={slug}
+              className="transition-all ease-in-out bg-white duration-300 transform  hover:shadow-blue-200"
+            >
+              <Link
+                href={`/books/${slug}`}
+                className="group flex justify-between items-center gap-x-8"
+              >
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <p
+                      className={clsx(
+                        className,
+                        "text-xl text-black group-hover:text-pink-500 font-bold group-hover:translate-x-1 transition-all transform ease-in-out flex items-center gap-x-1 duration-300"
+                      )}
+                    >
+                      <BsArrowRight className="hidden group-hover:block" />
+                      {title}
+                    </p>
+                    <div className="flex items-center text-sm text-slate-400">
+   
+                        <p>By {author.name}</p>
+                
+                      
+                      <BsDot />
+                      <time dateTime={date} className="block">
+                        {format(parseISO(date), "LLLL d  yyyy")}
+                      </time>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 group-hover:text-black transition-all ease-in-out duration-300 leading-8">{description}</p>
+                  {/* add tags */}
+                </div>
+                <div
+                  className="w-full hidden 
+                lg:block"
+                >
                   <img
-                    src={author.image}
+                    src={image}
                     alt=""
-                    width={30}
-                    className="rounded-full"
+                    className="rounded-2xl h-full object-cover object-center"
                   />
                 </div>
-              </div>
-              <p className="group-hover:text-gray-700">{description}</p>
-              {/* add tags */}
-              <p>{tags}</p>
-            </Link>
-          </Post>
-        ))}
-      </>
-    </>
+              </Link>
+            </Post>
+          )
+        )}
+      </div>
+    </div>
   );
 }
 

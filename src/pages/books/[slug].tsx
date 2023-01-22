@@ -2,6 +2,7 @@ import { allBooks } from "contentlayer/generated";
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { MDXProvider } from '@mdx-js/react';
+import { motion, useScroll } from "framer-motion";
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -9,6 +10,8 @@ export default function Book(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   const { book } = props;
+
+  const { scrollYProgress } = useScroll();
 
   if (!book) {
     return <div>No book was found ...</div>;
@@ -18,6 +21,7 @@ export default function Book(
 
   return (
     <div>
+      
       <h1>{book.title}</h1>
       <div>{book.date}</div>
       <img src={book.image} alt="" width={200} />
@@ -29,6 +33,10 @@ export default function Book(
           </MDXProvider>
         </div>
       )}
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
     </div>
   );
 }
